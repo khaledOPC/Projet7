@@ -1,15 +1,41 @@
-# Papy robot
+#Introduction Papy robot
+
+L'objectif ici est de créer un bot sur une page html en utilisant html css python flask et javascript.
+Il faut pouvoir effectuer des recherches en envoyant des requêtes sur les différentes API utilisées.
+Ces requêtes vont permettre l'affichage d'un échange entre l'utilisateurs et le bot qui sereont retranscrit sur la page html comme
+une conversation entre eux.
+Les différentes bulles de message qui s'afficheront ne devront pas disparaître et rester visible jusuqu'au refresh de la page par 
+l'utilisateur.
+
+Liens github du projet 7 : https://github.com/khaledOPC/Pro5
+
+# Environnement testé
+
+- Windows10
+- python3.8
+- Javascript
+- html
+- css 
+- flask
 
 
-Ce projet à pour but de mettre en place un bot qu'on nommera papy robot.
+# Utilisation
 
-Il nécessite l'utilisation de html, css, flask et javascript.
+- pip install python
+- pip install flask
+- pip install requests
+- pip install wikipedia
+- python main.py
 
-* Pour mener à bien se projet il faut passer par le téléchargement de plusieurs module tel que requests, bootstrap.. (requirements.txt)
 
-* L'objectif est de créer une page web sur laquelle une barre de recherche apparaîtera avec un bot.
 
-On effectue une recherche sur l'api google maps et l'api wikipedia qui sera retranscris
-sur la page html comme une conversation entre le bot et l'utilisateur. 
+# Paque
 
-* Enfin les dialogues resteront visible jusqu'au refresh de la page par l'utilisateur.
+- windows10
+- Système d'exploitation
+
+# Utile à savoir
+
+Le fichier import_off contient les requêtes pour importer les données depuis le site internet.
+Le fichier database contient le script python avec les requêtes mysql.
+Le fichier script modélise dans la console le fichier database en appelant les fonction et en formatent les données via des fonctions.
