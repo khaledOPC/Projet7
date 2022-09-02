@@ -7,7 +7,7 @@ une conversation entre eux.
 Les différentes bulles de message qui s'afficheront ne devront pas disparaître et rester visible jusuqu'au refresh de la page par 
 l'utilisateur.
 
-Liens github du projet 7 : https://github.com/khaledOPC/Pro5
+Liens github du projet 7 : https://github.com/khaledOPC/Projet7
 
 # Environnement testé
 
