@@ -1,4 +1,5 @@
 python
-mysql
+wikipedia
 requests
-mysql.connector
+bootstrap
+flask
