@@ -1,0 +1,4 @@
+python
+mysql
+requests
+mysql.connector
