@@ -36,6 +36,6 @@ Liens github du projet 7 : https://github.com/khaledOPC/Projet7
 
 # Utile à savoir
 
-Le fichier import_off contient les requêtes pour importer les données depuis le site internet.
-Le fichier database contient le script python avec les requêtes mysql.
-Le fichier script modélise dans la console le fichier database en appelant les fonction et en formatent les données via des fonctions.
+Le fichier main.py contient le code python flask.
+Le fichier function.py contient les différentes fonctions python utilisées pour illustrer le projet.
+Le fichier constant.py contient les liste et url utilisé dans le projet.
