@@ -1,4 +1,4 @@
-#Introduction Papy robot
+# Introduction Papy robot
 
 L'objectif ici est de créer un bot sur une page html en utilisant html css python flask et javascript.
 Il faut pouvoir effectuer des recherches en envoyant des requêtes sur les différentes API utilisées.
