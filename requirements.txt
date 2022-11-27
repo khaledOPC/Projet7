@@ -2,3 +2,4 @@ wikipedia
 requests
 flask
 gunicorn
+django
