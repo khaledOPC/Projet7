@@ -1,1 +1,1 @@
-web: gunicorn app:robotpappy.
+web: gunicorn main:app
