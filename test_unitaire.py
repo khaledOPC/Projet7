@@ -18,12 +18,12 @@ def test_clean_search():
 def test_search_google(mock_requests):
 	mock_response = MagicMock()
 	mock_response.json.return_value = {
-	'candidates': [{"formatted_address": '27 rue test_adresse', 'geometry':{'location':{'lat':10, 'lng':20}},}]
+	'candidates': [{"formatted_address": '27 rue test_adresse', 'geometry':{'location':{'lat':30, 'lng':20}},}]
 	}
 	mock_requests.request.return_value = mock_response
 	#mock_requests.get.return_value = mock_response
 	result = search_google("paris")
-	assert result == (10, 20, '27 rue test_adresse')
+	assert result == (30, 20, '27 rue test_adresse')
 
 
 @patch('function.requests')
@@ -48,5 +48,31 @@ def test_search_google_unavailable(mock_requests):
 	assert result is None
 
 
-# def test_search_wikipedia():
-# assert search_wikipedia()
+@patch('function.requests')
+def test_search_wikipedia_1(mock_requests):
+	mock_response = MagicMock()
+	mock_response.json.return_value = {
+	'query': {"pages" : {'11498241' : {'pageid': 11498241, 'ns': 0, 'title': 'Place Sébastopol', 'index': -1, 'extract': "Bonjour lille"}}}
+	}
+	mock_requests.request.return_value = mock_response
+	result = search_wikipedia(10,20)
+	assert result == "Bonjour lille"
+
+
+
+@patch('function.requests')
+def test_search_wikipedia_2(mock_requests):
+	mock_response = MagicMock()
+	mock_response.json.return_value = {'query' :{}}
+	mock_requests.request.return_value = mock_response
+	result = search_wikipedia(10,20)
+	assert result == "Oups !.. Je n'ai aucune information à ce sujet essayez autres choses !"
+
+
+@patch('function.requests')
+def test_search_wikipedia_3(mock_requests):
+	mock_response = MagicMock()
+	mock_response.ok = False
+	mock_requests.request.return_value = mock_response
+	result = search_wikipedia(10,20)
+	assert result == "Oups !.. Je n'ai aucune information à ce sujet essayez autres choses !"
