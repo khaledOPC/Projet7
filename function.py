@@ -27,22 +27,26 @@ def clean_search(search):
     return search
 
 
-def search_google(place):
-    url = GOOGLE_PLCAES_URL.format(place=place, api_key=os.environ['API_KEY'])
-    try:
+class GoogleSearch:
+
+
+    def search_google(self, place):
+        url = GOOGLE_PLCAES_URL.format(place=place, api_key=os.environ['API_KEY'])
         response = requests.request("GET", url)
-        if response.ok:
-            response_json = response.json()
-            first_result = response_json["candidates"][0]
-            adresse = first_result["formatted_address"]
-            lat = first_result["geometry"]["location"]["lat"]
-            lng = first_result["geometry"]["location"]["lng"]
-            return (lat, lng, adresse)
-        else:
+        try:
+            response = requests.request("GET", url)
+            if response.ok:
+                response_json = response.json()
+                first_result = response_json["candidates"][0]
+                adresse = first_result["formatted_address"]
+                lat = first_result["geometry"]["location"]["lat"]
+                lng = first_result["geometry"]["location"]["lng"]
+                return (lat, lng, adresse)
+            else:
+                return None
+        except Exception as e:
+            print(e)
             return None
-    except Exception as e:
-        print(e)
-        return None
 
 
 def search_wikipedia(lat, lng):
