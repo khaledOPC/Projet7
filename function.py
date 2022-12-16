@@ -2,7 +2,7 @@ import nltk
 import string
 import os
 import requests
-from constant import GOOGLE_PLCAES_URL
+from constant import GOOGLE_PLACES_URL
 from constant import stop_words
 from nltk.tokenize import word_tokenize
 
@@ -29,9 +29,8 @@ def clean_search(search):
 
 class GoogleSearch:
 
-
     def search_google(self, place):
-        url = GOOGLE_PLCAES_URL.format(place=place, api_key=os.environ['API_KEY'])
+        url = GOOGLE_PLACES_URL.format(place=place, api_key=os.environ['API_KEY'])
         response = requests.request("GET", url)
         try:
             response = requests.request("GET", url)
@@ -49,27 +48,29 @@ class GoogleSearch:
             return None
 
 
-def search_wikipedia(lat, lng):
-    wiki_url = "https://fr.wikipedia.org/w/api.php"
-    payload = {
-        "format": "json",
-        "action": "query",
-        "prop": "extracts",
-        "exsentences": "2",
-        "explaintext": "True",
-        "generator": "geosearch",
-        "ggsradius": "100",
-        "ggscoord": f"{lat}|{lng}",
-        "ggslimit": "2",
-    }
-    try:
-        wiki_response = requests.get(wiki_url, params=payload).json()
-        wiki_pages = wiki_response["query"]["pages"]
-        wiki_page = None
-        for key, value in wiki_pages.items():
-            wiki_page = value
-            break
-        wiki_message = wiki_page["extract"]
-        return wiki_message
-    except:
-        return "Oups !.. Je n'ai aucune information à ce sujet essayez autres choses !"
+class WikiSearch:
+
+    def search_wikipedia(self, lat, lng):
+        wiki_url = "https://fr.wikipedia.org/w/api.php"
+        payload = {
+            "format": "json",
+            "action": "query",
+            "prop": "extracts",
+            "exsentences": "2",
+            "explaintext": "True",
+            "generator": "geosearch",
+            "ggsradius": "100",
+            "ggscoord": f"{lat}|{lng}",
+            "ggslimit": "2",
+        }
+        try:
+            wiki_response = requests.get(wiki_url, params=payload).json()
+            wiki_pages = wiki_response["query"]["pages"]
+            wiki_page = None
+            for key, value in wiki_pages.items():
+                wiki_page = value
+                break
+            wiki_message = wiki_page["extract"]
+            return wiki_message
+        except:
+            return "Oups !.. Je n'ai aucune information à ce sujet essayez autres choses !"
