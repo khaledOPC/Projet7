@@ -1,7 +1,7 @@
-@media screen and (max-width: 900px)
-
-form {
-	text-align: center;
+@media screen and (max-width: 900px) {
+    form {
+        text-align: center;
+    }
 }
 
 #introduction {
@@ -10,7 +10,7 @@ form {
 
 h1{
 	font-family: cursive;
-	margin-left: 50;
+	margin-left: 50px;
 }
 
 #map {
@@ -32,8 +32,11 @@ height : 100px;
 
 /* .bubble */
 
+
+
 .bubble {
-	background-image: linear-gradient(bottom, rgb(210,244,254) 25%, rgb(149,194,253) 100%);
+
+	background-image: linear-gradient(to bottom, rgb(210,244,254) 25%, rgb(149,194,253) 100%);
 background-image: -o-linear-gradient(bottom, rgb(210,244,254) 25%, rgb(149,194,253) 100%);
 background-image: -moz-linear-gradient(bottom, rgb(210,244,254) 25%, rgb(149,194,253) 100%);
 background-image: -webkit-linear-gradient(bottom, rgb(210,244,254) 25%, rgb(149,194,253) 100%);
@@ -64,7 +67,7 @@ background-image: -webkit-gradient(
 }
 
 .bubble--alt {
-background-image: linear-gradient(bottom, rgb(172,228,75) 25%, rgb(122,205,71) 100%);
+background-image: linear-gradient(to bottom, rgb(172,228,75) 25%, rgb(122,205,71) 100%);
 background-image: -o-linear-gradient(bottom, rgb(172,228,75) 25%, rgb(122,205,71) 100%);
 background-image: -moz-linear-gradient(bottom, rgb(172,228,75) 25%, rgb(122,205,71) 100%);
 background-image: -webkit-linear-gradient(bottom, rgb(172,228,75) 25%, rgb(122,205,71) 100%);
